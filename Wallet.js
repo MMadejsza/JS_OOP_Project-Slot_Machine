@@ -18,6 +18,8 @@ class Wallet {
 				} else {
 					throw new Error('invalid operation type');
 				}
+			} else {
+				throw new Error('invalid operation type');
 			}
 		};
 	}
