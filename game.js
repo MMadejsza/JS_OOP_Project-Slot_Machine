@@ -7,10 +7,10 @@ class Game {
 		this.spanWallet = document.querySelector('.panel span.wallet');
 		this.tiles = document.querySelectorAll('div.tile');
 		this.inputBid = document.querySelector('#bid');
-		this.divResult = document.querySelector('.score div.result');
+		this.spanResult = document.querySelector('.score span.result');
 		this.spanGames = document.querySelector('.score span.number');
-		this.divWins = document.querySelector('.score div.win');
-		this.divLosses = document.querySelector('.score div.loss');
+		this.spanWins = document.querySelector('.score span.win');
+		this.spanLosses = document.querySelector('.score span.loss');
 		this.render();
 	}
 
@@ -26,17 +26,17 @@ class Game {
 			tile.style.backgroundColor = colors[index];
 		});
 		if (result) {
-			result = `You won ${wonMoney}$`;
+			result = `You WON ${wonMoney}$`;
 		} else if (!result && result !== '') {
 			// - must be without conversion to not let JS change it into false in DOM
 			//- this means that at the beginning none condition is met and no nay answer will be displayed
-			result = `You lost ${bid}$`;
+			result = `You LOST ${bid}$`;
 		}
-		this.divResult.textContent = result;
+		this.spanResult.textContent = result;
 		this.spanWallet.textContent = `${money}$`;
 		this.spanGames.textContent = ` ${stats[0]}`;
-		this.divWins.textContent = `Wins: ${stats[1]}`;
-		this.divLosses.textContent = `Losses: ${stats[2]}`;
+		this.spanWins.textContent = ` ${stats[1]}`;
+		this.spanLosses.textContent = ` ${stats[2]}`;
 		this.inputBid.value = '';
 	}
 	startGame() {
