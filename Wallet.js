@@ -12,13 +12,16 @@ class Wallet {
 			if (typeof value == 'number' && !isNaN(value)) {
 				//- if given is number and not "not a number fault"
 				if (typeOfOperation === '+') {
+					//- ADDITION
 					return (_money += value);
 				} else if (typeOfOperation === '-') {
+					//- SUBTRACTION
 					return (_money -= value);
 				} else {
 					throw new Error('invalid operation type');
 				}
 			} else {
+				console.log(typeof value);
 				throw new Error('invalid operation type');
 			}
 		};
