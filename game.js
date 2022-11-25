@@ -18,4 +18,3 @@ class Game {
 		console.log('lets start');
 	}
 }
-const game = new Game(200);
