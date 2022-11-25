@@ -32,8 +32,8 @@ class Game {
 		}
 		this.divResult.textContent = result;
 		this.spanWallet.textContent = money;
-		this.spanGames.textContent = stats[0];
-		this.divWins.textContent = stats[0];
-		this.divLosses.textContent = stats[0];
+		this.spanGames.textContent = ` ${stats[0]}`;
+		this.divWins.textContent = `Wins: ${stats[0]}`;
+		this.divLosses.textContent = `Losses: ${stats[0]}`;
 	}
 }
