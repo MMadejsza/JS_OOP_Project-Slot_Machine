@@ -3,7 +3,7 @@ class Game {
 		//- initiating previous classes
 		this.stats = new Statistics();
 		this.wallet = new Wallet(startWallet);
-		document.querySelector('#start').addEventListener('click', this.startGame);
+		document.querySelector('#start').addEventListener('click', this.startGame.bind(this)); //- binding this to this object for startGame() usage
 		this.spanWallet = document.querySelector('.panel span.wallet');
 		this.tiles = document.querySelectorAll('div.tile');
 		this.inputBid = document.querySelector('#bid');
@@ -13,7 +13,7 @@ class Game {
 		this.divLosses = document.querySelector('.score div.loss');
 		this.render();
 	}
-	startGame() {}
+
 	render(
 		colors = ['grey', 'grey', 'grey'],
 		money = this.wallet.getWalletValue(),
@@ -35,5 +35,18 @@ class Game {
 		this.spanGames.textContent = ` ${stats[0]}`;
 		this.divWins.textContent = `Wins: ${stats[0]}`;
 		this.divLosses.textContent = `Losses: ${stats[0]}`;
+	}
+	startGame() {
+		if (this.inputBid.value < 1) return alert('Minimal bid not reached');
+		const bid = Math.floor(this.inputBid.value);
+		if (!this.wallet.checkIfCanPlay(bid)) {
+			return alert('Empty wallet or invalid value');
+		}
+		this.wallet.changeWallet(bid, '-');
+		this.draw = new Draw();
+		const tilesColors = this.draw.getDrawResult();
+		const win = Result.checkIfWon(tilesColors);
+		console.log(tilesColors);
+		console.log(win);
 	}
 }

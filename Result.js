@@ -6,11 +6,12 @@ class Result {
 	}
 	static checkIfWon(drawResult) {
 		if (
-			(draw[0] === draw[1] && draw[1] === draw[2]) ||
-			(draw[0] !== draw[1] && draw[1] !== draw[2] && draw[0] !== draw[2])
+			(drawResult[0] === drawResult[1] && drawResult[1] === drawResult[2]) ||
+			(drawResult[0] !== drawResult[1] &&
+				drawResult[1] !== drawResult[2] &&
+				drawResult[0] !== drawResult[2])
 		) {
 			return true;
 		} else return false;
 	}
 }
-Result.moneyWonInGame(true, 12);
