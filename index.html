@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Slot Machine</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h1>Slot Machine</h1>
+
+			<section class="game">
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+			</section>
+
+			<section class="play">
+				<input type="number" placeholder="Set your rate" id="bid" />
+				<button id="start">Spin!</button>
+			</section>
+
+			<section class="panel">
+				Your credits before the next game: <span class="wallet"></span>
+			</section>
+
+			<section class="score">
+				<span class="result"></span> Attempted games:<span class="number"></span> Wins:<span
+					class="win"></span>
+				Losses:<span class="loss"></span>
+			</section>
+		</div>
+		<script src="game.js"></script>
+	</body>
+</html>
