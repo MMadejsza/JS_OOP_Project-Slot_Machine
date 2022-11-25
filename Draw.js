@@ -15,5 +15,3 @@ class Draw {
 		return colors;
 	}
 }
-
-const draw = new Draw();
