@@ -35,8 +35,8 @@ class Game {
 		this.divResult.textContent = result;
 		this.spanWallet.textContent = money;
 		this.spanGames.textContent = ` ${stats[0]}`;
-		this.divWins.textContent = `Wins: ${stats[0]}`;
-		this.divLosses.textContent = `Losses: ${stats[0]}`;
+		this.divWins.textContent = `Wins: ${stats[1]}`;
+		this.divLosses.textContent = `Losses: ${stats[2]}`;
 	}
 	startGame() {
 		if (this.inputBid.value < 1) return alert('Minimal bid not reached');
