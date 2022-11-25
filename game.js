@@ -26,17 +26,18 @@ class Game {
 			tile.style.backgroundColor = colors[index];
 		});
 		if (result) {
-			result = `You won ${wonMoney}`;
+			result = `You won ${wonMoney}$`;
 		} else if (!result && result !== '') {
 			// - must be without conversion to not let JS change it into false in DOM
 			//- this means that at the beginning none condition is met and no nay answer will be displayed
-			result = `You lost ${bid}`;
+			result = `You lost ${bid}$`;
 		}
 		this.divResult.textContent = result;
-		this.spanWallet.textContent = money;
+		this.spanWallet.textContent = `${money}$`;
 		this.spanGames.textContent = ` ${stats[0]}`;
 		this.divWins.textContent = `Wins: ${stats[1]}`;
 		this.divLosses.textContent = `Losses: ${stats[2]}`;
+		this.inputBid.value = '';
 	}
 	startGame() {
 		if (this.inputBid.value < 1) return alert('Minimal bid not reached');
