@@ -27,7 +27,8 @@ class Game {
 		});
 		if (result) {
 			result = `You won ${wonMoney}`;
-		} else if (!result && result != '') {
+		} else if (!result && result !== '') {
+			// - must be without conversion to not let JS change it into false in DOM
 			//- this means that at the beginning none condition is met and no nay answer will be displayed
 			result = `You lost ${bid}`;
 		}
