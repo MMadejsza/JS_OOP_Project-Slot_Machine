@@ -45,8 +45,8 @@ class Game {
 		this.wallet.changeWallet(bid, '-');
 		this.draw = new Draw();
 		const tilesColors = this.draw.getDrawResult();
-		const win = Result.checkIfWon(tilesColors);
-		console.log(tilesColors);
-		console.log(win);
+		const won = Result.checkIfWon(tilesColors);
+		const wonMoney = Result.moneyWonInGame(won, bid);
+		console.log(wonMoney);
 	}
 }
