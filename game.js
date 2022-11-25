@@ -19,6 +19,7 @@ class Game {
 		money = this.wallet.getWalletValue(),
 		result = '',
 		stats = [0, 0, 0],
+		bid = 0,
 		wonMoney = 0
 	) {
 		this.tiles.forEach((tile, index) => {
@@ -45,8 +46,17 @@ class Game {
 		this.wallet.changeWallet(bid, '-');
 		this.draw = new Draw();
 		const tilesColors = this.draw.getDrawResult();
-		const won = Result.checkIfWon(tilesColors);
-		const wonMoney = Result.moneyWonInGame(won, bid);
-		console.log(wonMoney);
+		const won = Result.checkIfWon(tilesColors); //- pass draw and check if you won. If yes, assign it
+		const wonMoney = Result.moneyWonInGame(won, bid); //- we won so "won" is true -> functions gives prize
+		this.wallet.changeWallet(wonMoney);
+		this.stats.addGameResultToStats(won, bid);
+		this.render(
+			tilesColors,
+			this.wallet.getWalletValue(),
+			won,
+			this.stats.showGameStats(),
+			bid,
+			wonMoney
+		);
 	}
 }
