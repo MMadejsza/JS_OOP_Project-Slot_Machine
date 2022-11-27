@@ -3,7 +3,6 @@ class Game {
 		//- initiating previous classes
 		this.stats = new Statistics();
 		this.wallet = new Wallet(startWallet);
-		document.querySelector('#start').addEventListener('click', this.startGame.bind(this)); //- binding this to this object for startGame() usage
 		this.spanWallet = document.querySelector('.panel span.wallet');
 		this.tiles = document.querySelectorAll('div.tile');
 		this.inputBid = document.querySelector('#bid');
@@ -11,6 +10,7 @@ class Game {
 		this.spanGames = document.querySelector('.score span.number');
 		this.spanWins = document.querySelector('.score span.win');
 		this.spanLosses = document.querySelector('.score span.loss');
+		document.querySelector('#start').addEventListener('click', this.startGame.bind(this)); //- binding this to this object for startGame() usage
 		this.render();
 	}
 
