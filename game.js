@@ -1,3 +1,4 @@
+//
 class Game {
 	constructor(startWallet) {
 		//- initiating previous classes
