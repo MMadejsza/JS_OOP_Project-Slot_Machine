@@ -7,7 +7,7 @@ This project is a game "Slot Machine" using JavaScript code structered in object
 OOP, Closures, Static Methods, .this link loosing sorted using .bind()
 
 ### CSS
-Media Queries
+FlexBox, Media Queries
 
 ## Game flow:
 
