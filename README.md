@@ -4,7 +4,10 @@ This project is a game "Slot Machine" using JavaScript code structered in object
 ## Website: https://mmadejsza.github.io/JS_OOP_Project-Slot_Machine/
 ## Uses inter alia concepts of:
 ### JS 
-OOP, Closures, Static Methods, .this link loosing sorted using .bind() 
+OOP, Closures, Static Methods, .this link loosing sorted using .bind()
+
+###CSS
+Media Queries
 
 ## Game flow:
 
